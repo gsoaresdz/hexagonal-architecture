@@ -1,6 +1,7 @@
 package com.udemy.hexagonal.adapters.in.controller.mapper;
 
 import com.udemy.hexagonal.adapters.in.controller.request.CustomerRequest;
+import com.udemy.hexagonal.adapters.in.controller.response.CustomerResponse;
 import com.udemy.hexagonal.application.core.domain.Customer;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -13,4 +14,5 @@ public interface CustomerMapper {
     @Mapping(target = "isValidCpf", ignore = true)
     Customer toCustomer(CustomerRequest customerRequest);
 
+    CustomerResponse toCustomerResponse(Customer customer);
 }
