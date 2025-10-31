@@ -1,9 +1,10 @@
 package com.udemy.hexagonal.application.core.usecase;
 
+import com.udemy.hexagonal.application.ports.in.DeleteCustomerByIdInputPort;
 import com.udemy.hexagonal.application.ports.in.FindCustomerByIdInputPort;
 import com.udemy.hexagonal.application.ports.out.DeleteCustomerByIdOutputPort;
 
-public class DeleteCustomerByIdUseCase {
+public class DeleteCustomerByIdUseCase implements DeleteCustomerByIdInputPort {
 
     private final FindCustomerByIdInputPort findCustomerByIdInputPort;
 
@@ -17,6 +18,7 @@ public class DeleteCustomerByIdUseCase {
         this.deleteCustomerByIdOutputPort = deleteCustomerByIdOutputPort;
     }
 
+    @Override
     public void delete(String id) {
         findCustomerByIdInputPort.find(id);
         deleteCustomerByIdOutputPort.delete(id);
