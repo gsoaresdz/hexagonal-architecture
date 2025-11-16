@@ -1,7 +1,15 @@
+server:
+  port: 8081
+
 udemy:
   client:
     address:
-      url: http://localhost:8082/addresses
+      host: localhost
+      port: 27017
+      authentication-database: admin
+      username: root
+      password: example
+      database: hexagonal
 
 spring:
   data:
